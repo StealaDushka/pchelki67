@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пчёлки 67</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐝</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="honeycomb" aria-hidden="true"></div>
+
+  <main class="card">
+    <div class="bee" aria-hidden="true">
+      <div class="wing left"></div><div class="wing right"></div>
+      <div class="body"><span class="stripe"></span><span class="stripe"></span></div>
+      <div class="eye"></div>
+    </div>
+    <h1>Пчёлки <span class="num">67</span></h1>
+
+    <!-- Загрузка -->
+    <section id="screen-loading" class="screen active">
+      <p class="muted">Жужжим…</p>
+    </section>
+
+    <!-- Вход / регистрация (как в Steal a Dushka) -->
+    <section id="screen-auth" class="screen">
+      <form id="form-auth" class="form">
+        <label>НИК
+          <input id="username" autocomplete="off" maxlength="20">
+        </label>
+        <label>ПАРОЛЬ
+          <input id="password" type="password">
+        </label>
+        <div class="auth-btns">
+          <button class="btn btn-login" type="submit" data-action="login">ВОЙТИ</button>
+          <button class="btn" type="submit" data-action="register">РЕГ</button>
+        </div>
+      </form>
+      <p class="hint">Запишите ваш пароль</p>
+      <p id="auth-msg" class="msg" role="status"></p>
+    </section>
+
+    <!-- Улей (профиль) -->
+    <section id="screen-home" class="screen">
+      <p class="big">Привет, <b id="home-nick"></b>!</p>
+      <div class="stats">
+        <div><span id="home-honey">0</span><small>мёд</small></div>
+        <div><span id="home-wins">0</span><small>победы</small></div>
+      </div>
+      <button class="btn" disabled>Бои — скоро</button>
+      <button class="link" id="btn-logout">Выйти</button>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
